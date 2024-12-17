@@ -1,0 +1,1 @@
+opentelemetry-instrument.exe --traces_exporter otlp --logs_exporter console,otlp --metrics_exporter otlp C:\dev.git\Experiments\Aspire9Tests\PythonService1\.venv\Scripts\python.exe test.py 

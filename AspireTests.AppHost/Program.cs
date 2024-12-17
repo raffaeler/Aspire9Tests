@@ -5,23 +5,25 @@ var builder = DistributedApplication.CreateBuilder(args);
 builder.AddProject<Projects.AspireTests>("aspiretests");
 
 //builder.AddPythonApp("Python", "../PythonService1", "hello_python.py")
-//       .WithEndpoint(targetPort: 8111, scheme: "http", env: "PORT")
+//       .WithEndpoint(targetPort: 8111, scheme: "http", env: "PORT", isProxied:false)
+//       .WithEnvironment("OTEL_EXPORTER_OTLP_ENDPOINT", "http://localhost:19192")
+//       .WithEnvironment("OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED", "true")
+//       .WithEnvironment("PORT", "8111")
 //       //.WithEnvironment("OTEL_PYTHON_OTLP_TRACES_SSL", "false")
 //       ;
 
-////builder.AddPythonProject("Python", "../PythonContainer1", "app2.py")
-//builder.AddPythonApp("Python", "../PythonService1", "test.py")
+//builder.AddPythonApp("Python", "../PythonService1", "app2.py")
+////builder.AddPythonApp("Python", "../PythonService1", "test.py")
 //       .WithEndpoint(targetPort: 8111, scheme: "http", env: "PORT")
+//       .WithEnvironment("PORT", "8111")
 //       .WithOtlpExporter()
 //       //.WithEnvironment("OTEL_PYTHON_OTLP_TRACES_SSL", "false")
 //       ;
 
-//builder.AddExecutable("Python", "../PythonContainer1/run.cmd", "../PythonContainer1")
+//builder.AddExecutable("Python", "cmd", "../PythonContainer1", "/C", "run.cmd")
 //       .WithEndpoint(targetPort: 8111, scheme: "http", env: "PORT")
 //       .WithEnvironment("OTEL_EXPORTER_OTLP_ENDPOINT", "http://localhost:19192")
-//       .WithEnvironment("OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED", "true")
-//       //.WithEnvironment("OTEL_PYTHON_OTLP_TRACES_SSL", "false")
-//       ;
+//       .WithEnvironment("OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED", "true");
 
 
 var config = builder.Configuration;
